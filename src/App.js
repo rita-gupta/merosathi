@@ -1,23 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Form, Input, Button } from "reactstrap";
+import { useState, useEffect } from "react";
+import Message from "./Message";
+import db from "./firebase";
 
 function App() {
+  const [input, setInput] = useState("");
+  const [messages, setMessages] = useState([]);
+
+  useEffect(() => {
+    db.collection("messages").onSnapshot((snapshot) => {
+      setMessages(
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          message: doc.data(),
+        }))
+      );
+    });
+  }, []);
+
+  console.log(messages);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+      <div className='app__chatRoom'>
+        {messages.map(({ message, id }) => (
+          <Message key={id} message={message} />
+        ))}
+        <Message />
+      </div>
+      <Form className='app__form'>
+        <Input
+          className='app__input'
+          placeholder='Enter a message'
+          value={input}
+          onChange={(event) => setInput(event.target.value)}
+        />
+        <Button className='app__sendButton' type='submit' color='primary'>
+          Send
+        </Button>
+      </Form>
     </div>
   );
 }

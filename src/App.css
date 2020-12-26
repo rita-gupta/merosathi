@@ -1,38 +1,26 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.app__form {
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  padding: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.app__input {
+  flex: 1;
+  border-radius: 10px;
+  margin-right: 5px;
+  padding: 8px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app__chatRoom {
+  display: flex;
+  border: 1px solid black;
+  padding: 20px;
+}
+
+.app__sendButton {
+  flex: 0;
+  margin-right: 10px;
 }

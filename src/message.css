@@ -1,0 +1,18 @@
+.message__container {
+  width: 50%;
+  display: flex;
+  margin-left: auto;
+  border: 1px solid green;
+  display: flex;
+  justify-content: flex-end;
+}
+.message {
+  position: relative;
+  border: 1px solid #cfcfcf;
+  background-color: #e6e6e6;
+  width: fit-content;
+  font-size: 16px;
+  color: black;
+  padding: 8px 15px;
+  border-radius: 18px 5px 18px 18px;
+}
