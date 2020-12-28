@@ -16,8 +16,10 @@
 
 .app__chatRoom {
   display: flex;
-  border: 1px solid black;
+  flex-direction: column;
   padding: 20px;
+  overflow-y: scroll;
+  padding-bottom: 50px;
 }
 
 .app__sendButton {

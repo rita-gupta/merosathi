@@ -1,10 +1,7 @@
 .message__container {
   width: 50%;
   display: flex;
-  margin-left: auto;
-  border: 1px solid green;
-  display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 .message {
   position: relative;
@@ -13,6 +10,21 @@
   width: fit-content;
   font-size: 16px;
   color: black;
+  padding: 8px 15px;
+  border-radius: 5px 18px 18px 18px;
+}
+.message__containerUser {
+  margin-left: auto;
+  justify-content: flex-end;
+}
+
+.message__user {
+  position: relative;
+  border: 1px solid #0b81ff;
+  background-color: #0b81ff;
+  width: fit-content;
+  font-size: 16px;
+  color: white;
   padding: 8px 15px;
   border-radius: 18px 5px 18px 18px;
 }
